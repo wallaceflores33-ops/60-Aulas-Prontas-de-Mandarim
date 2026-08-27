@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>60 Aulas Prontas de Mandarim — Menos Preparo, Mais Aula de Verdade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:       #0D0D0D;
+  --paper:     #F5F0E8;
+  --red:       #C8102E;
+  --red-dim:   #8B0B20;
+  --night:     #111827;
+  --parchment: #E8DFC0;
+  --stone:     #6B6560;
+  --gold:      #B8922A;
+  --white:     #FDFCF8;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ─── EYEBROW BAR ─── */
+.eyebrow-bar {
+  background: var(--ink);
+  color: var(--parchment);
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--night);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 80px 72px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Watermark character */
+.hero-char-bg {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(220px, 30vw, 420px);
+  color: rgba(200, 16, 46, 0.08);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  animation: breathe 8s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.06; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.12; transform: translate(-50%, -50%) scale(1.03); }
+}
+
+/* The "stamp" card */
+.hero-stamp {
+  position: relative;
+  z-index: 2;
+  background: var(--paper);
+  padding: 48px 44px;
+  border-left: 5px solid var(--red);
+  max-width: 380px;
+  animation: slideRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.stamp-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.stamp-char {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 88px;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.stamp-char-label {
+  font-size: 0.7rem;
+  color: var(--stone);
+  letter-spacing: 0.1em;
+  margin-bottom: 28px;
+}
+
+.stamp-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stamp-stat strong {
+  display: block;
+  font-family: 'Noto Serif', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.stamp-stat span {
+  font-size: 0.72rem;
+  color: var(--stone);
+  letter-spacing: 0.05em;
+}
+
+/* Hero text */
+.hero-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+
+.hero h1 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--parchment);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(245, 240, 232, 0.7);
+  margin-bottom: 44px;
+  max-width: 460px;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.btn-hero {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 18px 40px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border: 2px solid transparent;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  animation: fadeUp 0.8s ease 0.4s both;
+  cursor: pointer;
+}
+.btn-hero:hover {
+  background: var(--red-dim);
+  transform: translateY(-2px);
+}
+
+.hero-trust {
+  margin-top: 20px;
+  font-size: 0.78rem;
+  color: rgba(245, 240, 232, 0.4);
+  letter-spacing: 0.05em;
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+
+/* ─── DIVIDER ─── */
+.divider-red {
+  height: 4px;
+  background: linear-gradient(90deg, var(--red) 0%, var(--red-dim) 50%, transparent 100%);
+}
+
+/* ─── O QUE É ISSO ─── */
+.section-oque {
+  background: var(--paper);
+  padding: 100px 72px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 600;
+  border-left: 3px solid var(--red);
+  padding-left: 12px;
+  margin-bottom: 32px;
+}
+
+.section-oque h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 20px;
+  max-width: 640px;
+}
+
+.section-oque p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #3a3530;
+  max-width: 580px;
+  margin-bottom: 56px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.step-item {
+  padding: 40px 36px;
+  border-right: 1px solid rgba(0,0,0,0.12);
+  position: relative;
+  transition: background 0.25s;
+}
+.step-item:last-child { border-right: none; }
+.step-item:hover { background: rgba(200, 16, 46, 0.04); }
+
+.step-num {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: rgba(200, 16, 46, 0.12);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.step-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.step-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--stone);
+}
+
+/* ─── NÍVEIS ─── */
+.section-niveis {
+  background: var(--ink);
+  padding: 100px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-niveis::before {
+  content: '学';
+  font-family: 'Noto Serif SC', serif;
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 400px;
+  color: rgba(255,255,255,0.03);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.niveis-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.niveis-inner .section-label { color: var(--parchment); border-color: var(--red); }
+.niveis-inner h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--white);
+  margin-bottom: 60px;
+  max-width: 560px;
+  line-height: 1.25;
+}
+
+.niveis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 60px;
+}
+
+.nivel-card {
+  background: rgba(255,255,255,0.04);
+  padding: 44px 36px;
+  border-top: 3px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+}
+.nivel-card:hover { background: rgba(255,255,255,0.07); border-top-color: var(--red); }
+
+.nivel-char {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.nivel-card:nth-child(1) .nivel-char { color: var(--parchment); }
+.nivel-card:nth-child(2) .nivel-char { color: #A8C5DA; }
+.nivel-card:nth-child(3) .nivel-char { color: var(--gold); }
+
+.nivel-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+.nivel-card:nth-child(1) .nivel-tag { color: var(--parchment); }
+.nivel-card:nth-child(2) .nivel-tag { color: #A8C5DA; }
+.nivel-card:nth-child(3) .nivel-tag { color: var(--gold); }
+
+.nivel-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+.nivel-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(245,240,232,0.55);
+}
+
+.nivel-each {
+  background: rgba(200, 16, 46, 0.12);
+  border-left: 3px solid var(--red);
+  padding: 24px 32px;
+  color: rgba(245,240,232,0.8);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ─── PRA QUEM É ─── */
+.section-paraquem {
+  background: var(--paper);
+  padding: 100px 72px;
+}
+
+.paraquem-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.paraquem-text h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.25;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+.paraquem-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--stone);
+}
+
+.paraquem-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.paraquem-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: rgba(0,0,0,0.03);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2d2926;
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.paraquem-list li:hover {
+  border-left-color: var(--red);
+  background: rgba(200,16,46,0.04);
+}
+.paraquem-list li::before {
+  content: '→';
+  color: var(--red);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ─── COMO FUNCIONA ─── */
+.section-como {
+  background: var(--parchment);
+  padding: 100px 72px;
+}
+
+.como-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.como-label-col h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  color: var(--ink);
+  margin-top: 16px;
+}
+
+.como-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.como-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.como-step:last-child { border-bottom: none; }
+
+.como-step-num {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: rgba(200,16,46,0.2);
+  line-height: 1;
+  text-align: center;
+}
+.como-step-text strong {
+  display: block;
+  font-family: 'Noto Serif', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.como-step-text span {
+  font-size: 0.9rem;
+  color: var(--stone);
+  line-height: 1.6;
+}
+
+/* ─── O QUE VOCÊ RECEBE ─── */
+.section-recebe {
+  background: var(--night);
+  padding: 100px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-recebe::after {
+  content: '教';
+  font-family: 'Noto Serif SC', serif;
+  position: absolute;
+  left: -60px;
+  bottom: -40px;
+  font-size: 380px;
+  color: rgba(255,255,255,0.025);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.recebe-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.recebe-inner .section-label { color: var(--parchment); border-color: var(--red); }
+.recebe-inner h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--white);
+  margin-bottom: 48px;
+  line-height: 1.25;
+}
+
+.recebe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 60px;
+}
+
+.recebe-item {
+  background: rgba(255,255,255,0.04);
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: background 0.2s;
+}
+.recebe-item:hover { background: rgba(255,255,255,0.08); }
+
+.recebe-icon {
+  color: var(--red);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.recebe-item p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(245,240,232,0.75);
+}
+
+/* ─── BÔNUS ─── */
+.section-bonus {
+  background: var(--paper);
+  padding: 100px 72px;
+}
+
+.bonus-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bonus-inner h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--ink);
+  margin-bottom: 48px;
+  line-height: 1.25;
+}
+
+.bonus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.bonus-card {
+  border: 1px solid rgba(0,0,0,0.12);
+  position: relative;
+  overflow: hidden;
+  padding: 40px 36px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.bonus-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+.bonus-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--red));
+}
+
+.bonus-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 4px 10px;
+  margin-bottom: 20px;
+}
+
+.bonus-card h3 {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.bonus-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--stone);
+  margin-bottom: 20px;
+}
+.bonus-preco {
+  font-size: 0.8rem;
+  color: var(--stone);
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 4px;
+}
+.bonus-incluso {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+/* ─── OFERTA ─── */
+.section-oferta {
+  background: var(--ink);
+  padding: 100px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-oferta::before {
+  content: '买';
+  font-family: 'Noto Serif SC', serif;
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 500px;
+  color: rgba(200,16,46,0.06);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.oferta-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.oferta-inner .section-label {
+  color: var(--parchment);
+  border-color: var(--red);
+  margin-bottom: 24px;
+}
+
+.oferta-inner h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+
+.oferta-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 48px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.oferta-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+.oferta-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: rgba(245,240,232,0.8);
+  line-height: 1.5;
+}
+.oferta-checklist li::before {
+  content: '✓';
+  color: var(--red);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.oferta-preco-bloco {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.preco-de {
+  font-size: 0.9rem;
+  color: rgba(245,240,232,0.4);
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.preco-por {
+  font-family: 'Noto Serif', serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.preco-por sup {
+  font-size: 1.5rem;
+  vertical-align: super;
+  font-weight: 400;
+  color: var(--parchment);
+}
+
+.preco-desc {
+  font-size: 0.8rem;
+  color: rgba(245,240,232,0.45);
+  margin-top: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-oferta {
+  display: block;
+  background: var(--red);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 22px 48px;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.btn-oferta:hover {
+  background: var(--red-dim);
+  transform: translateY(-2px);
+}
+
+.garantia-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: rgba(245,240,232,0.5);
+}
+.garantia-icon {
+  font-size: 1.1rem;
+}
+
+/* ─── RODAPÉ ─── */
+footer {
+  background: #060606;
+  padding: 36px 72px;
+  text-align: center;
+}
+footer p {
+  font-size: 0.78rem;
+  color: rgba(245,240,232,0.25);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+footer a {
+  color: rgba(200,16,46,0.6);
+  text-decoration: none;
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left {
+    padding: 60px 32px;
+    order: 2;
+  }
+  .hero-right {
+    order: 1;
+    padding: 48px 32px;
+    min-height: 280px;
+  }
+  .hero-stamp { max-width: 100%; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .step-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.12); }
+  .paraquem-inner { grid-template-columns: 1fr; gap: 40px; }
+  .como-inner { grid-template-columns: 1fr; gap: 40px; }
+  .niveis-grid { grid-template-columns: 1fr; }
+  .recebe-grid { grid-template-columns: 1fr; }
+  .bonus-grid { grid-template-columns: 1fr; }
+  .section-oque, .section-niveis, .section-paraquem, .section-como,
+  .section-recebe, .section-bonus, .section-oferta {
+    padding: 72px 32px;
+  }
+  footer { padding: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Eyebrow -->
+<div class="eyebrow-bar">
+  Material imprimível para professores &nbsp;·&nbsp; 60 aulas &nbsp;·&nbsp; Entrega imediata
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Infoproduto · Professores de Mandarim</p>
+    <h1>60 Aulas Prontas de Mandarim —<br><em>Menos Preparo,<br>Mais Aula de Verdade</em></h1>
+    <p class="hero-sub">Vocabulário, caracteres e diálogos completos do básico ao avançado. Você imprime, aplica e nunca mais perde a noite anterior montando aula do zero.</p>
+    <a href="#oferta" class="btn-hero">Quero as 60 aulas — R$&nbsp;9,90 →</a>
+    <p class="hero-trust">🛡️ Garantia incondicional de 7 dias · Acesso imediato por e-mail</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-char-bg">中</div>
+    <div class="hero-stamp">
+      <p class="stamp-label">Material didático PDF</p>
+      <div class="stamp-char">语</div>
+      <p class="stamp-char-label">yǔ — língua / linguagem</p>
+      <div class="stamp-stats">
+        <div class="stamp-stat">
+          <strong>60</strong>
+          <span>aulas completas</span>
+        </div>
+        <div class="stamp-stat">
+          <strong>3</strong>
+          <span>níveis de ensino</span>
+        </div>
+        <div class="stamp-stat">
+          <strong>A4</strong>
+          <span>pronto pra impressão</span>
+        </div>
+        <div class="stamp-stat">
+          <strong>7</strong>
+          <span>dias de garantia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-red"></div>
+
+<!-- O que é isso -->
+<section class="section-oque">
+  <div class="reveal">
+    <span class="section-label">O que é isso</span>
+    <h2>Não é apostila de caracteres solta. É a aula pronta pra você aplicar.</h2>
+    <p>As 60 Aulas Prontas de Mandarim são um PDF completo, organizado por nível, com vocabulário, caractere novo com traçado, diálogo guiado e atividade prática em cada aula.</p>
+  </div>
+  <div class="steps-grid reveal">
+    <div class="step-item">
+      <div class="step-num">一</div>
+      <div class="step-title">Escolhe o nível do aluno</div>
+      <div class="step-desc">Básico, intermediário ou avançado — cada bloco já está separado, sem precisar garimpar o conteúdo certo.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">二</div>
+      <div class="step-title">Abre a aula do dia</div>
+      <div class="step-desc">Caractere novo com traçado, vocabulário, diálogo guiado e atividade de fixação já prontos na sequência.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">三</div>
+      <div class="step-title">Aplica sem adaptar nada</div>
+      <div class="step-desc">A aula já está pronta pra usar do jeito que está. Você só precisa abrir, imprimir e ir pra sala.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Níveis -->
+<section class="section-niveis">
+  <div class="niveis-inner">
+    <span class="section-label reveal">Conteúdo do material</span>
+    <h2 class="reveal">3 blocos por nível, 20 aulas em cada um</h2>
+    <div class="niveis-grid reveal">
+      <div class="nivel-card">
+        <span class="nivel-char">初</span>
+        <span class="nivel-tag">Básico · 20 aulas</span>
+        <div class="nivel-title">Fundamentos sólidos</div>
+        <div class="nivel-desc">Pinyin, tons, caracteres essenciais e vocabulário do dia a dia — base para qualquer aluno iniciante.</div>
+      </div>
+      <div class="nivel-card">
+        <span class="nivel-char">中</span>
+        <span class="nivel-tag">Intermediário · 20 aulas</span>
+        <div class="nivel-title">Expansão e contexto</div>
+        <div class="nivel-desc">Situações sociais, ampliação de caracteres e estruturas de frase mais complexas para conversação real.</div>
+      </div>
+      <div class="nivel-card">
+        <span class="nivel-char">高</span>
+        <span class="nivel-tag">Avançado · 20 aulas</span>
+        <div class="nivel-title">Fluência e debate</div>
+        <div class="nivel-desc">Debate guiado, textos mais longos e conversação sobre temas atuais — para alunos que já têm base sólida.</div>
+      </div>
+    </div>
+    <div class="nivel-each reveal">
+      <strong style="color:#fff;display:block;margin-bottom:8px">Cada aula inclui:</strong>
+      Caractere novo com traçado · Vocabulário do tema · Diálogo guiado · Atividade de fixação · Sugestão de correção
+    </div>
+  </div>
+</section>
+
+<!-- Pra quem é -->
+<section class="section-paraquem">
+  <div class="paraquem-inner">
+    <div class="paraquem-text reveal">
+      <span class="section-label">Pra quem é</span>
+      <h2>Se você se reconhece em algum desses pontos, o material é pra você.</h2>
+      <p>Professor de mandarim que quer gastar o tempo ensinando — não produzindo material do zero toda semana.</p>
+    </div>
+    <ul class="paraquem-list reveal">
+      <li>Passa a noite anterior pesquisando conteúdo pra aula do dia seguinte.</li>
+      <li>Tem alunos de níveis diferentes e precisa de material organizado por nível.</li>
+      <li>Sente dificuldade em ensinar o traçado dos caracteres de forma organizada.</li>
+      <li>Dá aula particular e quer material com aparência profissional.</li>
+      <li>Ensina online e presencial e quer material que funcione nos dois formatos.</li>
+      <li>Quer focar em aplicar aula, não em produzir material.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Como funciona -->
+<section class="section-como">
+  <div class="como-inner">
+    <div class="como-label-col reveal">
+      <span class="section-label">Como funciona</span>
+      <h2>Compra. Escolhe. Imprime. Aplica.</h2>
+    </div>
+    <div class="como-steps reveal">
+      <div class="como-step">
+        <div class="como-step-num">一</div>
+        <div class="como-step-text">
+          <strong>Compra — pagamento único</strong>
+          <span>Você paga uma vez e recebe o PDF na hora, direto no e-mail. Sem mensalidade, sem renovação.</span>
+        </div>
+      </div>
+      <div class="como-step">
+        <div class="como-step-num">二</div>
+        <div class="como-step-text">
+          <strong>Escolhe o bloco de nível do aluno</strong>
+          <span>Básico, intermediário ou avançado — abre o bloco certo e já vai pra aula do dia.</span>
+        </div>
+      </div>
+      <div class="como-step">
+        <div class="como-step-num">三</div>
+        <div class="como-step-text">
+          <strong>Imprime e aplica</strong>
+          <span>A aula já vem pronta do início ao fim. Você imprime, chega na aula e aplica.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O que você recebe -->
+<section class="section-recebe">
+  <div class="recebe-inner">
+    <span class="section-label reveal">O que você recebe</span>
+    <h2 class="reveal">Tudo que você precisa pra nunca mais montar aula do zero.</h2>
+    <div class="recebe-grid reveal">
+      <div class="recebe-item">
+        <span class="recebe-icon">✦</span>
+        <p>60 aulas completas em PDF, organizadas por nível</p>
+      </div>
+      <div class="recebe-item">
+        <span class="recebe-icon">✦</span>
+        <p>3 blocos: básico, intermediário e avançado — 20 aulas cada</p>
+      </div>
+      <div class="recebe-item">
+        <span class="recebe-icon">✦</span>
+        <p>Caractere novo com traçado, vocabulário e diálogo guiado em cada aula</p>
+      </div>
+      <div class="recebe-item">
+        <span class="recebe-icon">✦</span>
+        <p>Formato A4, pronto pra impressão ou uso em tela</p>
+      </div>
+      <div class="recebe-item">
+        <span class="recebe-icon">✦</span>
+        <p>Sugestão de correção e critério de avaliação por aula</p>
+      </div>
+      <div class="recebe-item">
+        <span class="recebe-icon">✦</span>
+        <p>Acesso imediato por e-mail — sem esperar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bônus -->
+<section class="section-bonus">
+  <div class="bonus-inner">
+    <span class="section-label reveal">Bônus inclusos</span>
+    <h2 class="reveal">Mais dois materiais no mesmo pacote — sem custo extra.</h2>
+    <div class="bonus-grid reveal">
+      <div class="bonus-card">
+        <span class="bonus-badge">Bônus 1</span>
+        <h3>Guia de Tons e Pronúncia para o Professor</h3>
+        <p>Guia rápido com os 4 tons do mandarim explicados de forma prática, pra professores que não têm fluência nativa transmitirem a pronúncia certa desde o início.</p>
+        <span class="bonus-preco">Valor: R$ 19,90</span>
+        <span class="bonus-incluso">✓ Incluso no material</span>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-badge">Bônus 2</span>
+        <h3>Cartelas de Caracteres para Praticar Traçado</h3>
+        <p>40 cartelas imprimíveis com caracteres pra praticar o traçado correto, prontas pra usar como atividade extra ou lição de casa.</p>
+        <span class="bonus-preco">Valor: R$ 17,90</span>
+        <span class="bonus-incluso">✓ Incluso no material</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Oferta -->
+<section class="section-oferta" id="oferta">
+  <div class="oferta-inner">
+    <span class="section-label reveal">Oferta</span>
+    <h2 class="reveal">Tudo isso por <span style="color:var(--red)">R$&nbsp;9,90</span></h2>
+    <div class="oferta-box reveal">
+      <ul class="oferta-checklist">
+        <li>60 aulas completas de mandarim em PDF</li>
+        <li>Bloco Básico — 20 aulas completas</li>
+        <li>Bloco Intermediário — 20 aulas completas</li>
+        <li>Bloco Avançado — 20 aulas completas</li>
+        <li>Caractere novo, vocabulário e diálogo guiado em cada aula</li>
+        <li>Sugestão de correção e critério de avaliação por aula</li>
+        <li>Formato A4, pronto pra impressão ou uso em tela</li>
+        <li>Bônus 1 — Guia de Tons e Pronúncia para o Professor (R$ 19,90)</li>
+        <li>Bônus 2 — Cartelas de Caracteres para Praticar Traçado (R$ 17,90)</li>
+        <li>Entrega imediata por e-mail</li>
+        <li>Garantia incondicional de 7 dias</li>
+      </ul>
+      <div class="oferta-preco-bloco">
+        <span class="preco-de">De R$ 57,60</span>
+        <div class="preco-por"><sup>R$</sup>9<sup>,90</sup></div>
+        <p class="preco-desc">pagamento único · acesso imediato</p>
+      </div>
+    </div>
+    <a href="LINK_CHECKOUT" class="btn-oferta reveal">Quero as 60 aulas — R$&nbsp;9,90 →</a>
+    <div class="garantia-line reveal">
+      <span class="garantia-icon">🛡️</span>
+      <span>Garantia de 7 dias. Não gostou, o dinheiro volta — sem burocracia.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé -->
+<footer>
+  <p>
+    Este material é um recurso pedagógico de apoio ao ensino de mandarim.<br>
+    Garantia incondicional de 7 dias. <a href="LINK_CHECKOUT">Acessar checkout</a>
+  </p>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Staggered children
+      entry.target.querySelectorAll('.step-item, .nivel-card, .recebe-item, .bonus-card, .oferta-checklist li, .paraquem-list li, .como-step').forEach((el, i) => {
+        el.style.transitionDelay = `${i * 0.08}s`;
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, i * 80);
+      });
+    }
+  });
+}, { threshold: 0.12 });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
